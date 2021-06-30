@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'djangotwitter.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'bpdugcgp',
+        'USER': 'bpdugcgp',
+        'PASSWORD': 'Mmjfs7LHZWSlBZ3s5oOmtTIpzICLMl4Z',
+        'HOST': 'batyr.db.elephantsql.com',
+        'PORT': '5432',
     }
 }
 
