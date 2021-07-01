@@ -1,0 +1,16 @@
+{% extends './base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            {% for post in post_list %}
+            <p>{{ post.post_text }}</p>
+            <p>{{ post.pub_datetime }}</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
