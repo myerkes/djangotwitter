@@ -22,13 +22,18 @@
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'posts:index' %}">Home</a>
                 </li>
+                {% if user.is_authenticated %}
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Option 2</a>
+                  <a class="nav-link" href="{% url 'posts:posts' %}">Posts</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Option 3</a>
+                    <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                 </li>
-
+                {% else %}
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                </li>
+                {% endif %}
 
                 {% block navbar %}
                 {% endblock %}
