@@ -1,0 +1,17 @@
+{% extends './base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            {{ post.post_text }}
+            {% for reply in post.reply_set.all %}
+            <p>{{ reply.reply_text }}</p>
+            <p>{{ reply.pub_datetime }}</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
