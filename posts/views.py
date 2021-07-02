@@ -1,3 +1,4 @@
+from posts.forms import *
 from posts.models import Post, Reply
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
@@ -15,6 +16,11 @@ class PostList(LoginRequiredMixin, ListView):
     model = Post
     context_object_name = 'post_list'
     template_name = 'posts/post_list.html'
+
+class PostCreate(LoginRequiredMixin, CreateView):
+    model = Post
+    form_class = PostCreateForm
+    template_name = 'posts/post_create_form.html'
 
 ### Reply Views ###
 class ReplyList(DetailView):

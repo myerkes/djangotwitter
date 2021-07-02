@@ -8,6 +8,9 @@ class Post(models.Model):
     def __str__(self) -> str:
         return self.post_text
 
+    def get_absolute_url(self):
+        return ''
+
 
 class Reply(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
