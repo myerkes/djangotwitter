@@ -12,7 +12,7 @@
         {% load static %}
 
         <nav class="navbar navbar-expand-md navbar-light" style="background-color: rgb(142, 177, 255);">
-            <a class="navbar-brand fw-bold" href="/#">Django Twitter</a>
+            <a class="navbar-brand fw-bold" href="{% url 'posts:index' %}">Django Twitter</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -25,6 +25,9 @@
                 {% if user.is_authenticated %}
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'posts:posts' %}">Posts</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'myaccount:profile' %}">Profile</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
