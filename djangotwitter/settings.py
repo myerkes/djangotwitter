@@ -51,9 +51,12 @@ INSTALLED_APPS = [
     'crispy_forms',
 ]
 
-SITE_ID = 1
+SITE_ID = 2
+LOGIN_REDIRECT_URL = '/home'
 
 # Provider specific settings
+'''
+Currently adding via SocialApp in admin
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
         # For each OAuth based provider, either add a ``SocialApp``
@@ -66,6 +69,7 @@ SOCIALACCOUNT_PROVIDERS = {
         }
     }
 }
+'''
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
