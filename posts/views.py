@@ -29,3 +29,4 @@ class PostCreate(LoginRequiredMixin, CreateView):
 class ReplyList(DetailView):
     model = Post
     template_name = 'posts/reply_list.html'
+

@@ -10,7 +10,7 @@
             {% for post in post_list %}
             <div class="card my-1">
                 <div class="card-body" style="background-color: black; color: white;">
-                    <h3 class="card-title">{{ post.poster }} - <span class="card-text">{{ post.pub_datetime }}</span></h2>
+                    <h2 class="card-title">{{ post.poster }} - <span class="card-text">{{ post.pub_datetime }}</span></h2>
                     <p class="card-title">{{ post.post_text }}</p>
                     <a href="{% url 'posts:replies' post.id %}" class="btn btn-primary">See Replies</a>
                 </div>

@@ -9,8 +9,8 @@
             {% for reply in post.reply_set.all %}
             <div class="card my-1">
                 <div class="card-body" style="background-color: black; color: white;">
+                    <h3 class="card-title">{{ reply.replyer }} - <span class="card-text">{{ reply.pub_datetime }}</span></h2>
                     <p class="card-title">{{ reply.reply_text }}</p>
-                    <p class="card-title">{{ reply.pub_datetime }}</p>
                 </div>
             </div>
             {% endfor %}
