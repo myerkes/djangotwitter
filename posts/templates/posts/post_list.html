@@ -6,6 +6,18 @@
 <div class="container">
     <div class="row">
         <div class="col">
+
+            {% for post in post_list %}
+            <div class="card my-1">
+                <div class="card-body" style="background-color: black; color: white;">
+                    <p class="card-title">{{ post.post_text }}</p>
+                    <p class="card-text">{{ post.pub_datetime }}</p>
+                    <a href="{% url 'posts:replies' post.id %}" class="btn btn-primary">See Replies</a>
+                </div>
+            </div>
+            {% endfor %}
+
+            {% comment %}
             {% for post in post_list %}
             <p>{{ post.post_text }}</p>
             <p>{{ post.pub_datetime }}</p>
@@ -40,6 +52,7 @@
                 </div>
             </div>
             {% endfor %}
+            {% endcomment %}
         </div>
     </div>
 </div>
