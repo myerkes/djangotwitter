@@ -17,10 +17,13 @@ class PostList(LoginRequiredMixin, ListView):
     context_object_name = 'post_list'
     template_name = 'posts/post_list.html'
 
+    ordering = ['-pub_datetime']
+
 class PostCreate(LoginRequiredMixin, CreateView):
     model = Post
     form_class = PostCreateForm
     template_name = 'posts/post_create_form.html'
+    success_url = '../posts'
 
 ### Reply Views ###
 class ReplyList(DetailView):
