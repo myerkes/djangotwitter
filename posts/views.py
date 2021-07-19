@@ -1,3 +1,4 @@
+from django.db.models import query
 from posts.forms import *
 from posts.models import Post
 from django.shortcuts import get_object_or_404, render
@@ -18,7 +19,8 @@ class PostList(LoginRequiredMixin, ListView):
     context_object_name = 'post_list'
     template_name = 'posts/post_list.html'
 
-    ordering = ['-pub_datetime']
+    def get_queryset(self):
+        return Post.objects.filter(origin=None).order_by('-pub_datetime')
 
 class PostCreate(LoginRequiredMixin, CreateView):
     model = Post
