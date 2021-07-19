@@ -28,6 +28,17 @@ class PostCreate(LoginRequiredMixin, CreateView):
     template_name = 'posts/post_create_form.html'
     success_url = '../posts'
 
+class PostDetail(LoginRequiredMixin, DetailView):
+    model = Post
+    template_name = 'posts/post_detail.html'
+
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        replies = Post.objects.filter(origin=self.kwargs['pk'])
+        context['replies'] = replies
+        return context
+    
 
 class ReplyCreate(LoginRequiredMixin, CreateView):
     model = Post

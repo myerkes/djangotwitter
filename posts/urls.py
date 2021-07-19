@@ -9,4 +9,5 @@ urlpatterns = [
     path('posts/create', views.PostCreate.as_view(), name='postcreate'),
     path('posts/<int:post_pk>/reply', views.ReplyCreate.as_view(), name='replycreate'),
     path('posts/<int:post_pk>/repost', views.RepostCreate.as_view(), name='repostcreate'),
+    path('posts/<pk>/detail', views.PostDetail.as_view(), name='postdetail'),
 ]
