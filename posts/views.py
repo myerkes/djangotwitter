@@ -41,4 +41,17 @@ class ReplyCreate(LoginRequiredMixin, CreateView):
         self.object.origin = origin
         self.object.save
         return super().form_valid(form)
+
+class RepostCreate(LoginRequiredMixin, CreateView):
+    model = Post
+    form_class = RepostCreateForm
+    template_name = 'posts/repost_create_form.html'
+    success_url = '..'
+
+    def form_valid(self, form):
+        repost = Post.objects.get(pk=self.kwargs['post_pk'])
+        self.object = form.save(commit=False)
+        self.object.repost = repost
+        self.object.save
+        return super().form_valid(form)
     

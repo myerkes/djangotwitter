@@ -12,5 +12,10 @@ class ReplyCreateForm(forms.ModelForm):
         model = Post
         fields = ['post_text', 'origin']
 
+class RepostCreateForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = ['post_text', 'repost']
+
         
         
