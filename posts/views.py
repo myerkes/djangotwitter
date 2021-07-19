@@ -1,5 +1,5 @@
 from posts.forms import *
-from posts.models import Post, Reply
+from posts.models import Post
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
@@ -25,8 +25,4 @@ class PostCreate(LoginRequiredMixin, CreateView):
     template_name = 'posts/post_create_form.html'
     success_url = '../posts'
 
-### Reply Views ###
-class ReplyList(DetailView):
-    model = Post
-    template_name = 'posts/reply_list.html'
 
