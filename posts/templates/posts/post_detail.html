@@ -11,8 +11,8 @@
                 <div class="card-body" style="background-color: black; color: white;">
                     <h2 class="card-title">{{ post.poster }}<span class="text-dark"> · {{ post.pub_datetime }}</span></h2>
                     <p class="card-title">{{ post.post_text }}</p>
-                    <a href="./{{ post.pk }}/reply" class="btn btn-primary">Reply</a>
-                    <a href="./{{ post.pk }}/repost" class="btn btn-primary">Repost</a>
+                    <a href="{% url 'posts:replycreate' post.id%}" class="btn btn-primary">Reply</a>
+                    <a href="{% url 'posts:repostcreate' post.id%}" class="btn btn-primary">Repost</a>
                     <a href="" class="btn btn-primary">Like</a>
                 </div>
             </div>
@@ -21,8 +21,8 @@
                 <div class="card-body" style="background-color: black; color: white;">
                     <h4 class="card-title">{{ reply.poster }}<span class="text-dark"> · {{ reply.pub_datetime }}</span></h2>
                     <p class="card-title">{{ reply.post_text }}</p>
-                    <a href="./{{ post.pk }}/reply" class="btn btn-primary">Reply</a>
-                    <a href="./{{ post.pk }}/repost" class="btn btn-primary">Repost</a>
+                    <a href="{% url 'posts:replycreate' reply.id%}" class="btn btn-primary">Reply</a>
+                    <a href="{% url 'posts:repostcreate' reply.id%}" class="btn btn-primary">Repost</a>
                     <a href="" class="btn btn-primary">Like</a>
                 </div>
             </div>
