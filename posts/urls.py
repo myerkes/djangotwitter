@@ -7,4 +7,5 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('posts/', views.PostList.as_view(), name='posts'),
     path('posts/create', views.PostCreate.as_view(), name='postcreate'),
+    path('posts/<int:post_pk>/reply', views.ReplyCreate.as_view(), name='replycreate'),
 ]

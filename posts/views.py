@@ -1,6 +1,7 @@
 from posts.forms import *
 from posts.models import Post
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
+from django.urls import reverse
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
@@ -26,3 +27,16 @@ class PostCreate(LoginRequiredMixin, CreateView):
     success_url = '../posts'
 
 
+class ReplyCreate(LoginRequiredMixin, CreateView):
+    model = Post
+    form_class = ReplyCreateForm
+    template_name = 'posts/reply_create_form.html'
+    success_url = '..'
+
+    def form_valid(self, form):
+        origin = Post.objects.get(pk=self.kwargs['post_pk'])
+        self.object = form.save(commit=False)
+        self.object.origin = origin
+        self.object.save
+        return super().form_valid(form)
+    

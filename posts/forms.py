@@ -6,4 +6,11 @@ class PostCreateForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = ['post_text']
+
+class ReplyCreateForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = ['post_text', 'origin']
+
+        
         
