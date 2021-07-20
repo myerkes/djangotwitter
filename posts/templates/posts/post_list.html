@@ -1,7 +1,14 @@
 {% extends './base.html' %}
 
-{% block content %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'posts/posts_styles.css' %}">
+{% endblock %}
 
+{% block content %}
+<h1 id="asdf">hello?</h1>
+
+<img src="{% static 'posts/icon-comment.png' %}" style="width: 50px;">
 
 <div class="container">
     <div class="row">
@@ -17,6 +24,15 @@
                 <div class="card-body" style="background-color: black; color: white;">
                     <h2 class="card-title">{{ post.poster }}<span class="text-dark"> · {{ post.pub_datetime }}</span></h2>
                     <p class="card-title">{{ post.post_text }}</p>
+
+
+                    <a href="{% url 'posts:replycreate' post.id%}" class="icon-comment">
+                        <div class="container comment-overlay" style="height: 40px; width: 40px;">
+                        </div>
+                    </a>
+                    
+
+                    
                     <a href="{% url 'posts:replycreate' post.id%}" class="btn btn-primary">Reply</a>
                     <a href="{% url 'posts:repostcreate' post.id%}" class="btn btn-primary">Repost</a>
                     <a href="{% url 'posts:postdetail' post.id%}" class="btn btn-primary">Detail</a>
