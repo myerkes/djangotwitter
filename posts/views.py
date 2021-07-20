@@ -53,6 +53,12 @@ class ReplyCreate(LoginRequiredMixin, CreateView):
         self.object.save
         return super().form_valid(form)
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        origin = get_object_or_404(Post, pk=self.kwargs['post_pk'])
+        context['origin'] = origin
+        return context
+
 class RepostCreate(LoginRequiredMixin, CreateView):
     model = Post
     form_class = RepostCreateForm

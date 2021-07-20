@@ -70,3 +70,11 @@ body {
     color: white;
     text-decoration: none;
 }
+
+/* Move to different css file */
+#id_post_text {
+    width: 100%;
+    rows: "3";
+    color: white;
+    background-color: black;
+}
