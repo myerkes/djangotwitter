@@ -71,4 +71,10 @@ class RepostCreate(LoginRequiredMixin, CreateView):
         self.object.repost = repost
         self.object.save
         return super().form_valid(form)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        repost = get_object_or_404(Post, pk=self.kwargs['post_pk'])
+        context['repost'] = repost
+        return context
     
