@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     'crispy_forms',
 ]
 
-SITE_ID = 2
+SITE_ID = 1
 LOGIN_REDIRECT_URL = '/posts'
 
 # Provider specific settings
