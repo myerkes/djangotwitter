@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Needed for allauth
-    'django.contrib.sites',
+    #'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
