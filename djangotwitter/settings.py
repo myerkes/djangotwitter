@@ -51,7 +51,8 @@ INSTALLED_APPS = [
 
     'crispy_forms',
 ]
-
+# 1 - heroku
+# 2 - localhost
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/posts'
 
