@@ -23,6 +23,18 @@
                             <h2 class="card-title">{{ post.poster }}<span class="text-dark"> · {{ post.pub_datetime }}</span></h2>
                             <p class="card-title">{{ post.post_text }}</p>
 
+                            {% if post.repost != None %}
+                            <div class="card border-dark">
+                                <a href="{% url 'posts:postdetail' post.id%}" class="tweet-box">
+                                    <div class="card-body" style="background-color: black; color: white;">
+                                        <h2 class="card-title">{{ post.repost.poster }}<span class="text-dark"> · {{ post.repost.pub_datetime }}</span></h2>
+                                        <p class="card-title">{{ post.repost.post_text }}</p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            {% endif %}
+
                             <ul class="action-buttons">
                                 <li class="action-button">
                                     <a href="{% url 'posts:replycreate' post.id%}" class="icon-comment">
