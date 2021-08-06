@@ -8,6 +8,9 @@
 {% load account socialaccount %}
 
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
+{% block extra_head %}
+<link rel="stylesheet" type="text/css" href="{% static 'accountinfo/posts_styles.css' %}">
+{% endblock %}
 
 {% block content %}
 
@@ -49,7 +52,7 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
 
 
 <a title="Google" class="socialaccount_provider google" href="/accounts/google/login/?process=login" id="google_login">
-  <img src="{% static 'posts/btn_google_signin_dark_normal_web.png' %}">
+  <img src="{% static 'accountinfo/btn_google_signin_dark_normal_web.png' %}">
 </a>
 
 
