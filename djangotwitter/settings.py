@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-from django.contrib.sites.models import Site
 import os
 import django_heroku
 
@@ -54,7 +53,7 @@ INSTALLED_APPS = [
 ]
 # 1 - heroku
 # 2 - localhost
-SITE_ID = Site.objects.all()[0].id
+SITE_ID = 7
 LOGIN_REDIRECT_URL = '/posts'
 
 # Provider specific settings
