@@ -7,14 +7,33 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container-fluid">
     <div class="row justify-content-md-center">
-        <div class="col-md-8 col-12">
+        <div class="col-md-8 col-10">
             <a href="{% url 'posts:postcreate' %}" class="btn btn-primary">Post</a>
         </div>
     </div>
     <div class="row justify-content-md-center">
-        <div class="col-md-8 col-12">
+        <div class="col-2">
+            <ul class="navbar-nav mr-auto">
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'posts:posts' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'myaccount:profile' %}">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                </li>
+                {% endif %}
+              </ul>
+        </div>
+        <div class="col-md-8 col-sm-10 col-10">
 
             {% for post in post_list %}
                 <div class="card border-dark">
@@ -60,6 +79,13 @@
                 </div>
             
             {% endfor %}
+        </div>
+        <div class="col-sm-0 col-0">
+            <ul>
+                <li>Placeholder 1</li>
+                <li>Placeholder 2</li>
+                <li>Placeholder 3</li>
+            </ul>
         </div>
     </div>
 </div>
