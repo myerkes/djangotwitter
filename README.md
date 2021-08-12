@@ -29,7 +29,11 @@ The intent of this project was to recreate a well known social media application
 - urllib3==1.26.6
 
 # Launch
-* 
+* Clone the repository to your local machine
+* Create a virtual environment inside your new project folder
+* Start your virtual environment
+* Install all dependencies form the requirements.txt file
+* Run ```python manage.py runserver``` to start the application
 
 # Sources
 
