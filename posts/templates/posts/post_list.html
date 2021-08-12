@@ -8,6 +8,7 @@
 {% block content %}
 
         <div class="col-md-8 col-10" style="height: 100vh; overflow-y: scroll;">
+            <a href="{% url 'posts:postcreate' %}" class="btn btn-primary">Post</a>
             {% for post in post_list %}
                 <div class="card border-dark">
                     <a href="{% url 'posts:postdetail' post.id%}" class="tweet-box">
