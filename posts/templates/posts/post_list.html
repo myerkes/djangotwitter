@@ -9,14 +9,26 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-2" style="background-color: aqua; height: 100vh;">
+        <div class="col-2" style="height: 100vh;">
             <ul>
-                <li>Placeholder 1</li>
-                <li>Placeholder 2</li>
-                <li>Placeholder 3</li>
-            </ul>
+                {% if user.is_authenticated %}
+                <li class="">
+                  <a class="" href="{% url 'posts:posts' %}">Home</a>
+                </li>
+                <li class="">
+                  <a class="" href="{% url 'myaccount:profile' %}">Profile</a>
+                </li>
+                <li class="">
+                    <a class="" href="{% url 'account_logout' %}">Logout</a>
+                </li>
+                {% else %}
+                <li class="">
+                  <a class="" href="{% url 'account_login' %}">Login</a>
+                </li>
+                {% endif %}
+              </ul>
         </div>
-        <div class="col-md-8 col-10" style="background-color: blue; height: 100vh;">
+        <div class="col-md-8 col-10" style="height: 100vh; overflow-y: scroll;">
             {% for post in post_list %}
                 <div class="card border-dark">
                     <a href="{% url 'posts:postdetail' post.id%}" class="tweet-box">
@@ -62,7 +74,7 @@
             
             {% endfor %}
         </div>
-        <div class="col-md-2 d-none d-md-block" style="background-color: blueviolet; height: 100vh;">
+        <div class="col-md-2 d-none d-md-block" style="height: 100vh;">
             <ul>
                 <li>Placeholder 1</li>
                 <li>Placeholder 2</li>
@@ -76,7 +88,7 @@
 <div class="container-fluid">
     <div class="row justify-content-md-center">
         <div class="col-2 fixed-top">
-            <ul">
+            <ul>
                 {% if user.is_authenticated %}
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'posts:posts' %}">Home</a>
