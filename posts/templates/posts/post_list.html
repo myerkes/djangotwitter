@@ -7,27 +7,6 @@
 
 {% block content %}
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-2" style="height: 100vh;">
-            <ul>
-                {% if user.is_authenticated %}
-                <li class="">
-                  <a class="" href="{% url 'posts:posts' %}">Home</a>
-                </li>
-                <li class="">
-                  <a class="" href="{% url 'myaccount:profile' %}">Profile</a>
-                </li>
-                <li class="">
-                    <a class="" href="{% url 'account_logout' %}">Logout</a>
-                </li>
-                {% else %}
-                <li class="">
-                  <a class="" href="{% url 'account_login' %}">Login</a>
-                </li>
-                {% endif %}
-              </ul>
-        </div>
         <div class="col-md-8 col-10" style="height: 100vh; overflow-y: scroll;">
             {% for post in post_list %}
                 <div class="card border-dark">
@@ -74,94 +53,5 @@
             
             {% endfor %}
         </div>
-        <div class="col-md-2 d-none d-md-block" style="height: 100vh;">
-            <ul>
-                <li>Placeholder 1</li>
-                <li>Placeholder 2</li>
-                <li>Placeholder 3</li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-{% comment %}
-<div class="container-fluid">
-    <div class="row justify-content-md-center">
-        <div class="col-2 fixed-top">
-            <ul>
-                {% if user.is_authenticated %}
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'posts:posts' %}">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'myaccount:profile' %}">Profile</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
-                </li>
-                {% else %}
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'account_login' %}">Login</a>
-                </li>
-                {% endif %}
-              </ul>
-        </div>
-        <div class="col-md-8 col-sm-10 col-10">
-            <a href="{% url 'posts:postcreate' %}" class="btn btn-primary">Post</a>
-            {% for post in post_list %}
-                <div class="card border-dark">
-                    <a href="{% url 'posts:postdetail' post.id%}" class="tweet-box">
-                        <div class="card-body" style="background-color: black; color: white;">
-                            <h2 class="card-title"><a href="{% url 'myaccount:profileid' post.poster.id%}">{{ post.poster }}</a><span class="text-dark"> · {{ post.pub_datetime }}</span></h2>
-                            <p class="card-title">{{ post.post_text }}</p>
-
-                            {% if post.repost != None %}
-                            <div class="card border-dark">
-                                <a href="{% url 'posts:postdetail' post.id%}" class="tweet-box">
-                                    <div class="card-body" style="background-color: black; color: white;">
-                                        <h2 class="card-title"><a href="{% url 'myaccount:profileid' post.repost.poster.id%}">{{ post.repost.poster }}</a><span class="text-dark"> · {{ post.repost.pub_datetime }}</span></h2>
-                                        <p class="card-title">{{ post.repost.post_text }}</p>
-                                    </div>
-                                </a>
-                            </div>
-
-                            {% endif %}
-
-                            <ul class="action-buttons">
-                                <li class="action-button">
-                                    <a href="{% url 'posts:replycreate' post.id%}" class="icon-comment">
-                                        <div class="container overlay comment-overlay" style="height: 40px; width: 40px;">
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="action-button">
-                                    <a href="{% url 'posts:repostcreate' post.id%}" class="icon-repost">
-                                        <div class="container overlay repost-overlay" style="height: 40px; width: 40px;">
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="action-button">
-                                    <a href="" class="icon-like">
-                                        <div class="container overlay like-overlay" style="height: 40px; width: 40px;">
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </a>
-                </div>
-            
-            {% endfor %}
-        </div>
-        <div class="col-sm-0 col-0">
-            <ul>
-                <li>Placeholder 1</li>
-                <li>Placeholder 2</li>
-                <li>Placeholder 3</li>
-            </ul>
-        </div>
-    </div>
-</div>
-{% endcomment %}
 
 {% endblock %}
