@@ -2,10 +2,7 @@
 
 {% block content %}
 
-
-<div class="container">
-    <div class="row">
-        <div class="col">
+        <div class="col-md-8 col-10" style="height: 100vh; overflow-y: scroll;">
             <div class="card border-dark">
                 <a href="{% url 'posts:postdetail' post.id%}" class="tweet-box">
                     <div class="card-body" style="background-color: black; color: white;">
@@ -67,7 +64,5 @@
             </div>
             {% endfor %}
         </div>
-    </div>
-</div>
 
 {% endblock %}
