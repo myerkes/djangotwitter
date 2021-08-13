@@ -22,7 +22,7 @@
                       <a class="" href="{% url 'posts:posts' %}">Home</a>
                     </li>
                     <li class="left-nav-button">
-                      <a class="" href="{% url 'myaccount:profile' %}">Profile</a>
+                      <a href="{% url 'myaccount:profileid' user.id%}">Profile</a>
                     </li>
                     <li class="left-nav-button">
                         <a class="" href="{% url 'account_logout' %}">Logout</a>
