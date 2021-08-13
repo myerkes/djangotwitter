@@ -3,6 +3,20 @@ body {
     color: white;
 }
 
+.left-nav-button {
+    list-style-type: none;
+}
+
+.left-nav-button a {
+    color: white;
+    text-decoration: none;
+}
+
+.left-nav-button a:hover {
+    background-image: rgba(17, 209, 17, 0.9);
+    color: blue;
+}
+
 .action-buttons {
     text-align: justify;
     min-width: 500px;

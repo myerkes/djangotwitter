@@ -3,26 +3,21 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-        <div class="col-md-8 col-10" style="height: 100vh; overflow-y: scroll;">
-            <div class="card border-dark">
 
-                    <div class="card-body" style="background-color: black; color: white;">
-                        <h2 class="card-title">{{ origin.poster }}<span class="text-dark"> · {{ origin.pub_datetime }}</span></h2>
-                        <p class="card-title">{{ origin.post_text }}</p>
+<div class="card border-dark">
 
-                        
-                    </div>
-            </div>
-            <form method="POST">
-                {% csrf_token %}
-                <textarea name="post_text" maxlength="255" required="" id="id_post_text" placeholder="Tweet your reply" rows="2"></textarea>
-                <input type="submit" class="btn btn-primary" value="Reply">
-            </form>
-        
+        <div class="card-body" style="background-color: black; color: white;">
+            <h2 class="card-title">{{ origin.poster }}<span class="text-dark"> · {{ origin.pub_datetime }}</span></h2>
+            <p class="card-title">{{ origin.post_text }}</p>
+
+            
         </div>
-
-    
-
+</div>
+<form method="POST">
+    {% csrf_token %}
+    <textarea name="post_text" maxlength="255" required="" id="id_post_text" placeholder="Tweet your reply" rows="2"></textarea>
+    <input type="submit" class="btn btn-primary" value="Reply">
+</form>
 
 
 {% endblock %}

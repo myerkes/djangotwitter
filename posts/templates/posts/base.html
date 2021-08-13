@@ -18,25 +18,27 @@
             <div class="col-2" style="height: 100vh;">
                 <ul>
                     {% if user.is_authenticated %}
-                    <li class="">
+                    <li class="left-nav-button">
                       <a class="" href="{% url 'posts:posts' %}">Home</a>
                     </li>
-                    <li class="">
+                    <li class="left-nav-button">
                       <a class="" href="{% url 'myaccount:profile' %}">Profile</a>
                     </li>
-                    <li class="">
+                    <li class="left-nav-button">
                         <a class="" href="{% url 'account_logout' %}">Logout</a>
                     </li>
                     {% else %}
-                    <li class="">
+                    <li class="left-nav-button">
                       <a class="" href="{% url 'account_login' %}">Login</a>
                     </li>
                     {% endif %}
                   </ul>
             </div>
 
-        {% block content %}
-        {% endblock %}
+            <div class="col-md-8 col-10" style="height: 100vh; overflow-y: scroll;">
+            {% block content %}
+            {% endblock %}
+            </div>
 
             <div class="col-md-2 d-none d-md-block" style="height: 100vh;">
               <ul>
