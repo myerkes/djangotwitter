@@ -17,23 +17,17 @@ body {
     color: blue;
 }
 
+.buttons ul {
+    display: flex;
+    justify-content: space-around;
+}
+  
 .action-buttons {
-    text-align: justify;
-    min-width: 500px;
-}
-
-.action-buttons:after {
-    display: inline-block;
-    width: 100%;
-}
-
-.action-buttons ul {
-    list-style: none;
+    padding-left: 0;
 }
 
 .action-buttons li {
     display: inline-block;
-    padding-left: 15%;
 }
 
 .comment-overlay {

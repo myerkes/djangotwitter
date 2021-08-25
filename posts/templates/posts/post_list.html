@@ -27,26 +27,29 @@
 
                     {% endif %}
 
-                    <ul class="action-buttons">
-                        <li class="action-button">
-                            <a href="{% url 'posts:replycreate' post.id%}" class="icon-comment">
-                                <div class="container overlay comment-overlay" style="height: 40px; width: 40px;">
-                                </div>
-                            </a>
-                        </li>
-                        <li class="action-button">
-                            <a href="{% url 'posts:repostcreate' post.id%}" class="icon-repost">
-                                <div class="container overlay repost-overlay" style="height: 40px; width: 40px;">
-                                </div>
-                            </a>
-                        </li>
-                        <li class="action-button">
-                            <a href="" class="icon-like">
-                                <div class="container overlay like-overlay" style="height: 40px; width: 40px;">
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
+
+                    <div class="buttons">
+                        <ul class="action-buttons">
+                            <li class="action-button">
+                                <a href="{% url 'posts:replycreate' post.id%}" class="icon-comment">
+                                    <div class="container overlay comment-overlay" style="height: 40px; width: 40px;">
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="action-button">
+                                <a href="{% url 'posts:repostcreate' post.id%}" class="icon-repost">
+                                    <div class="container overlay repost-overlay" style="height: 40px; width: 40px;">
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="action-button">
+                                <a href="" class="icon-like">
+                                    <div class="container overlay like-overlay" style="height: 40px; width: 40px;">
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </a>
         </div>
