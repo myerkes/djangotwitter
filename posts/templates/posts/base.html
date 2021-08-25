@@ -16,7 +16,7 @@
       <div class="container-fluid">
         <div class="row">
             <div class="col-2" style="height: 100vh;">
-                <ul>
+                <ul class="nav-list">
                     {% if user.is_authenticated %}
                     <li class="left-nav-button">
                       <a class="" href="{% url 'posts:posts' %}">Home</a>
@@ -26,6 +26,9 @@
                     </li>
                     <li class="left-nav-button">
                         <a class="" href="{% url 'account_logout' %}">Logout</a>
+                    </li>
+                    <li class="left-nav-button">
+                      <a href="{% url 'posts:postcreate' %}" class="btn btn-primary btn-block" id="tweet-button">Tweet</a>
                     </li>
                     {% else %}
                     <li class="left-nav-button">

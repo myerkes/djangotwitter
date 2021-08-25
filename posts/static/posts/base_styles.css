@@ -7,14 +7,27 @@ body {
     list-style-type: none;
 }
 
+.left-nav-button {
+    padding: 15px;
+}
+
 .left-nav-button a {
+    padding: 15px;
     color: white;
     text-decoration: none;
 }
 
 .left-nav-button a:hover {
-    background-image: rgba(17, 209, 17, 0.9);
-    color: blue;
+    background: rgba(61, 61, 61, .6);
+    border-radius: 300px;
+}
+
+.nav-list {
+    padding-left: 0;
+}
+
+#tweet-button {
+    border-radius: 300px;
 }
 
 .buttons ul {
@@ -69,7 +82,7 @@ body {
     background-size:cover;
 }
 
-.tweet-box{
+.tweet-box {
     color: white;
     background-color: blue;
 }

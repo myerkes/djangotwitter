@@ -7,7 +7,6 @@
 
 {% block content %}
 
-    <a href="{% url 'posts:postcreate' %}" class="btn btn-primary">Post</a>
     {% for post in post_list %}
         <div class="card border-dark">
             <a href="{% url 'posts:postdetail' post.id%}" class="tweet-box">
