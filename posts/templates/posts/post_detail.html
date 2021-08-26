@@ -5,59 +5,75 @@
     <div class="card border-dark">
         <a href="{% url 'posts:postdetail' post.id%}" class="tweet-box">
             <div class="card-body" style="background-color: black; color: white;">
-                <h2 class="card-title">{{ post.poster }}<span class="text-dark"> · {{ post.pub_datetime }}</span></h2>
-                <p class="card-title">{{ post.post_text }}</p>
+                <h2 class="card-title"><a href="{% url 'myaccount:profileid' post.poster.id%}">{{ post.poster }}</a><span class="text-dark"> · {{ post.pub_datetime }}</span></h2>
+                <a href="{% url 'posts:postdetail' post.id%}" class="tweet-box"><p class="card-title">{{ post.post_text }}</p></a>
 
-                <ul class="action-buttons">
-                    <li class="action-button">
-                        <a href="{% url 'posts:replycreate' post.id%}" class="icon-comment">
-                            <div class="container overlay comment-overlay" style="height: 40px; width: 40px;">
-                            </div>
-                        </a>
-                    </li>
-                    <li class="action-button">
-                        <a href="{% url 'posts:repostcreate' post.id%}" class="icon-repost">
-                            <div class="container overlay repost-overlay" style="height: 40px; width: 40px;">
-                            </div>
-                        </a>
-                    </li>
-                    <li class="action-button">
-                        <a href="" class="icon-like">
-                            <div class="container overlay like-overlay" style="height: 40px; width: 40px;">
-                            </div>
-                        </a>
-                    </li>
-                </ul>
+                <!-- Show original tweet if a repost -->
+                {% if post.repost != None %}
+                <div class="card border-dark">  
+                    <div class="card-body" style="background-color: black; color: white;">
+                        <h2 class="card-title"><a href="{% url 'myaccount:profileid' post.repost.poster.id%}">{{ post.repost.poster }}</a><span class="text-dark"> · {{ post.repost.pub_datetime }}</span></h2>
+                        <a href="{% url 'posts:postdetail' post.id%}" class="tweet-box"><p class="card-title">{{ post.repost.post_text }}</p></a>
+                    </div>
+                </div>
+
+                {% endif %}
+
+                <div class="buttons">
+                    <ul class="action-buttons">
+                        <li class="action-button">
+                            <a href="{% url 'posts:replycreate' post.id%}" class="icon-comment">
+                                <div class="container overlay comment-overlay" style="height: 40px; width: 40px;">
+                                </div>
+                            </a>
+                        </li>
+                        <li class="action-button">
+                            <a href="{% url 'posts:repostcreate' post.id%}" class="icon-repost">
+                                <div class="container overlay repost-overlay" style="height: 40px; width: 40px;">
+                                </div>
+                            </a>
+                        </li>
+                        <li class="action-button">
+                            <a href="" class="icon-like">
+                                <div class="container overlay like-overlay" style="height: 40px; width: 40px;">
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </a>
     </div>
+
     {% for reply in replies %}
     <div class="card border-dark">
         <a href="{% url 'posts:postdetail' post.id%}" class="tweet-box">
             <div class="card-body" style="background-color: black; color: white;">
-                <h4 class="card-title">{{ reply.poster }}<span class="text-dark"> · {{ reply.pub_datetime }}</span></h2>
-                <p class="card-title">{{ reply.post_text }}</p>
+                <h4 class="card-title"><a href="{% url 'myaccount:profileid' post.poster.id%}">{{ reply.poster }}</a><span class="text-dark"> · {{ reply.pub_datetime }}</span></h4>
+                <a href="{% url 'posts:postdetail' post.id%}" class="tweet-box"><p class="card-title">{{ reply.post_text }}</p></a>
 
-                <ul class="action-buttons">
-                    <li class="action-button">
-                        <a href="{% url 'posts:replycreate' post.id%}" class="icon-comment">
-                            <div class="container overlay comment-overlay" style="height: 40px; width: 40px;">
-                            </div>
-                        </a>
-                    </li>
-                    <li class="action-button">
-                        <a href="{% url 'posts:repostcreate' post.id%}" class="icon-repost">
-                            <div class="container overlay repost-overlay" style="height: 40px; width: 40px;">
-                            </div>
-                        </a>
-                    </li>
-                    <li class="action-button">
-                        <a href="" class="icon-like">
-                            <div class="container overlay like-overlay" style="height: 40px; width: 40px;">
-                            </div>
-                        </a>
-                    </li>
-                </ul>
+                <div class="buttons">
+                    <ul class="action-buttons">
+                        <li class="action-button">
+                            <a href="{% url 'posts:replycreate' post.id%}" class="icon-comment">
+                                <div class="container overlay comment-overlay" style="height: 40px; width: 40px;">
+                                </div>
+                            </a>
+                        </li>
+                        <li class="action-button">
+                            <a href="{% url 'posts:repostcreate' post.id%}" class="icon-repost">
+                                <div class="container overlay repost-overlay" style="height: 40px; width: 40px;">
+                                </div>
+                            </a>
+                        </li>
+                        <li class="action-button">
+                            <a href="" class="icon-like">
+                                <div class="container overlay like-overlay" style="height: 40px; width: 40px;">
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </a>
     </div>
