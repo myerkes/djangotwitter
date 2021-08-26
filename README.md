@@ -33,9 +33,18 @@ The intent of this project was to recreate a well known social media application
 * Create a virtual environment inside your new project folder
 * Start your virtual environment
 * Install all dependencies form the requirements.txt file
+* Ensure the site_id in setting.py is set to 2 for your local machine
+* For Google Authentication...
+    * [Tutorial for using Google login with Django](https://www.section.io/engineering-education/django-google-oauth/)
+    * Add your google login information via the admin portal or in settings.py
 * Run ```python manage.py runserver``` to start the application
 
-# Sources
 
 # Features
 - Login can be accessed by creating an account or using Google OAuth 2.0
+- Core Twitter features such as tweeting, commenting, and re-tweeting
+
+# Future Improvements
+- Like functionality
+- Enhanches profile including profile picture, basic info, etc.
+- Posts featuring media
