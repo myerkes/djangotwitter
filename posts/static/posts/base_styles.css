@@ -3,6 +3,10 @@ body {
     color: white;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 .left-nav-button {
     list-style-type: none;
 }
