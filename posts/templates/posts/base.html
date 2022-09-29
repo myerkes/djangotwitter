@@ -15,6 +15,7 @@
     <body>
       <div class="container-fluid">
         <div class="row">
+          <!-- Left hand navigation column -->
             <div class="col-2" style="height: 100vh;">
                 <ul class="nav-list">
                     {% if user.is_authenticated %}
@@ -38,16 +39,17 @@
                   </ul>
             </div>
 
+            <!-- Middle main content column -->
             <div class="col-md-8 col-10" style="height: 100vh; overflow-y: scroll;">
             {% block content %}
             {% endblock %}
             </div>
 
+            <!-- right hand extra information column -->
             <div class="col-md-2 d-none d-md-block" style="height: 100vh;">
               <ul>
-                  <li>Placeholder 1</li>
-                  <li>Placeholder 2</li>
-                  <li>Placeholder 3</li>
+                  <li>What's happening</li>
+                  <li>Who to follow</li>
               </ul>
             </div>
           </div>
