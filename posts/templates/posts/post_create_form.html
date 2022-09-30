@@ -7,8 +7,10 @@
 <h2>Share your thoughts</h2>
 <form method="POST">
     {% csrf_token %}
-    {{ form|crispy }}
-    <input type="submit" value="Send it">
+    <!--{{ form|crispy }}-->
+    <!--<textarea class="form-control" id="tweetTextArea" rows="3">{{ post_text }}</textarea>-->
+    <input type="text-area" name="post_text" maxlength="255" class="textinput textInput" required id="id_post_text">
+    <input type="submit" value="Send it" style="border-radius: 300px;">
 </form>
 
 
