@@ -16,8 +16,8 @@
       <div class="container-fluid">
         <div class="row">
           <!-- Left hand navigation column -->
-            <div class="col-2" style="height: 100vh;">
-                <ul class="nav-list">
+            <div class="col-md-3 col-2" style="height: 100vh;">
+                <ul class="nav-list float-right d-none d-lg-block" style="width: 15rem;">
                     {% if user.is_authenticated %}
                     <li class="left-nav-button">
                       <a class="" href="{% url 'posts:posts' %}">Home</a>
@@ -37,16 +37,39 @@
                     </li>
                     {% endif %}
                   </ul>
+
+                  <ul class="nav-list float-right d-lg-none" style="width: 5rem;">
+                    {% if user.is_authenticated %}
+                    <li class="left-nav-button">
+                      <a class="" href="{% url 'posts:posts' %}">H</a>
+                    </li>
+                    <li class="left-nav-button">
+                      <a href="{% url 'myaccount:profileid' user.id%}">P</a>
+                    </li>
+                    <li class="left-nav-button">
+                        <a class="" href="{% url 'account_logout' %}">L</a>
+                    </li>
+                    <li class="left-nav-button">
+                      <a href="{% url 'posts:postcreate' %}" class="btn btn-primary btn-block" id="tweet-button">T</a>
+                    </li>
+                    {% else %}
+                    <li class="left-nav-button">
+                      <a class="" href="{% url 'account_login' %}">L</a>
+                    </li>
+                    {% endif %}
+                  </ul>
+
+                  
             </div>
 
             <!-- Middle main content column -->
-            <div class="col-md-8 col-10" style="height: 100vh; overflow-y: scroll;">
+            <div class="col-md-6 col-10" style="height: 100vh; overflow-y: scroll;">
             {% block content %}
             {% endblock %}
             </div>
 
             <!-- right hand extra information column -->
-            <div class="col-md-2 d-sm-none d-md-block" style="height: 100vh;">
+            <div class="col-md-3 d-sm-none d-md-block" style="height: 100vh;">
               <ul>
                   <li>What's happening</li>
                   <li>Who to follow</li>
